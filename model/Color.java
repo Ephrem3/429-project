@@ -10,6 +10,7 @@ import java.util.Vector;
 
 // project imports
 import exception.InvalidPrimaryKeyException;
+import javafx.scene.paint.Paint;
 
 
 
@@ -17,6 +18,8 @@ import exception.InvalidPrimaryKeyException;
 //==============================================================
 public class Color extends EntityBase {
     private static final String myTableName = "Color";
+
+    public static Paint LIGHTYELLOW;
 
     protected Properties dependencies;
 

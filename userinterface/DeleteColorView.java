@@ -22,6 +22,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -54,11 +57,15 @@ public class DeleteColorView extends View {
 	{
 		super(wsc, "DeleteColorView");
 
+		String css = getClass().getResource("Styles.css").toExternalForm();
+        getStylesheets().add(css);
+
 		populateFields();
 
 		// create a container for showing the contents
 		VBox container = new VBox(10);
 		container.setPadding(new Insets(15, 5, 5, 5));
+		container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 
 		// create our GUI components, add them to this panel
 		container.getChildren().add(createTitle());
@@ -88,12 +95,14 @@ public class DeleteColorView extends View {
 	private Node createTitle() {
 		HBox container = new HBox();
 		container.setAlignment(Pos.CENTER);	
+		container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
+
 
 		Text titleText = new Text(" Delete Color ");
 		titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 		titleText.setWrappingWidth(300);
 		titleText.setTextAlignment(TextAlignment.CENTER);
-		titleText.setFill(javafx.scene.paint.Color.DARKGREEN);
+		titleText.setFill(javafx.scene.paint.Color.BLACK);
 		container.getChildren().add(titleText);
 		
 		return container;
@@ -109,6 +118,7 @@ public class DeleteColorView extends View {
        	grid.setHgap(10);
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
+		
         
         Text prompt = new Text("Are you sure you'd like to delete color with description: " + description + "?");
         prompt.setWrappingWidth(350);

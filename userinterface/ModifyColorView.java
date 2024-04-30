@@ -22,6 +22,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -55,10 +58,15 @@ public class ModifyColorView extends View {
 	public ModifyColorView(IModel wsc)
 	{
 		super(wsc, "ModifyColorView");
+		String css = getClass().getResource("Styles.css").toExternalForm();
+        getStylesheets().add(css);
+
+
 
 		// create a container for showing the contents
 		VBox container = new VBox(10);
 		container.setPadding(new Insets(15, 5, 5, 5));
+		container.setBackground(new Background(new BackgroundFill(javafx.scene.paint.Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 
 		// create our GUI components, add them to this panel
 		container.getChildren().add(createTitle());
@@ -97,8 +105,9 @@ public class ModifyColorView extends View {
 		titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 		titleText.setWrappingWidth(300);
 		titleText.setTextAlignment(TextAlignment.CENTER);
-		titleText.setFill(javafx.scene.paint.Color.DARKGREEN);
+		titleText.setFill(javafx.scene.paint.Color.BLACK);
 		container.getChildren().add(titleText);
+		container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 		
 		return container;
 	}

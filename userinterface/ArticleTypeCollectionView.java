@@ -22,6 +22,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -60,11 +63,14 @@ public class ArticleTypeCollectionView extends View
 	//--------------------------------------------------------------------------
 	public ArticleTypeCollectionView(IModel wsc) {
 		super(wsc, "ArticleTypeCollectionView");
+		String css = getClass().getResource("Styles.css").toExternalForm();
+        getStylesheets().add(css);
 
 		// create a container for showing the contents
 		VBox container = new VBox(10);
 		container.setPadding(new Insets(15, 5, 5, 5));
-
+		container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
+		
 		// create our GUI components, add them to this panel
 		container.getChildren().add(createTitle());
 		container.getChildren().add(createFormContent());
@@ -119,11 +125,11 @@ public class ArticleTypeCollectionView extends View
 		HBox container = new HBox();
 		container.setAlignment(Pos.CENTER);	
 
-		Text titleText = new Text(" Select an Article Type ");
+		Text titleText = new Text("Article Type Information");
 		titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 		titleText.setWrappingWidth(300);
 		titleText.setTextAlignment(TextAlignment.CENTER);
-		titleText.setFill(javafx.scene.paint.Color.DARKGREEN);
+		titleText.setFill(Color.DARKGREEN);
 		container.getChildren().add(titleText);
 		
 		return container;
@@ -140,13 +146,14 @@ public class ArticleTypeCollectionView extends View
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
         
-        Text prompt = new Text("Article Type INFORMATION");
+        Text prompt = new Text(" Select an Article Type ");
         prompt.setWrappingWidth(300);
+		prompt.setFont(Font.font("Arial", FontWeight.BOLD, 16));
         prompt.setTextAlignment(TextAlignment.CENTER);
         prompt.setFill(Color.BLACK);
         grid.add(prompt, 0, 0, 2, 1);
 
-        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 16);
     
         Text aplhaCodeLabel = new Text(" Alpha Code: ");
         aplhaCodeLabel.setFont(myFont);

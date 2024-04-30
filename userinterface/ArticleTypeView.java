@@ -11,6 +11,9 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -31,8 +34,13 @@ public class ArticleTypeView extends View{
     public ArticleTypeView(IModel model) {
         super(model, "ArticleTypeView");
         // create a container for showing the contents
+
+        String css = getClass().getResource("Styles.css").toExternalForm();
+        getStylesheets().add(css);
+
         VBox container = new VBox(10);
         container.setPadding(new Insets(15, 5, 5, 5));
+        container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 
         // Add a title for this panel
         container.getChildren().add(createTitle());
@@ -67,14 +75,15 @@ public class ArticleTypeView extends View{
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Text prompt = new Text("Article Type INFORMATION");
+        Text prompt = new Text("Article Type");
         prompt.setWrappingWidth(400);
         prompt.setTextAlignment(TextAlignment.CENTER);
-        prompt.setFill(Color.BLACK);
+        prompt.setFill(Color.DARKGREEN);
+        prompt.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         grid.add(prompt, 0, 0, 2, 1);
 
         Text barcodeLabel = new Text(" Barcode Prefix : ");
-        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 16);
         barcodeLabel.setFont(myFont);
         barcodeLabel.setWrappingWidth(150);
         barcodeLabel.setTextAlignment(TextAlignment.RIGHT);

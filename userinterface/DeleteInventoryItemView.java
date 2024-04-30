@@ -58,7 +58,7 @@ public class DeleteInventoryItemView extends View {
         HBox container = new HBox();
         container.setAlignment(Pos.CENTER);
 
-        Text titleText = new Text(" Delete Inventory Item ");
+        Text titleText = new Text(" Delete Inventory Item");
         titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         titleText.setWrappingWidth(300);
         titleText.setTextAlignment(TextAlignment.CENTER);
@@ -81,7 +81,7 @@ public class DeleteInventoryItemView extends View {
         Text prompt = new Text("Are you sure you'd like to remove the inventory item with the details below?");
         prompt.setWrappingWidth(350);
         prompt.setTextAlignment(TextAlignment.CENTER);
-        prompt.setFill(javafx.scene.paint.Color.BLACK);
+        prompt.setFill(javafx.scene.paint.Color.DARKGREEN);
         grid.add(prompt, 0, 0);
 
         Enumeration<Object> enu = itemState.keys();

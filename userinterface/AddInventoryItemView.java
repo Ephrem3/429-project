@@ -71,10 +71,15 @@ public class AddInventoryItemView extends View {
     public AddInventoryItemView(IModel invenItem){
 
         super(invenItem, "AddInventoryItemView");
+        String css = getClass().getResource("Styles.css").toExternalForm();
+        getStylesheets().add(css);
+
+
 
         //Create container for view
         VBox container = new VBox(10);
         container.setAlignment(Pos.CENTER);
+        container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 
 		container.setPadding(new Insets(15, 5, 5, 5));
 
@@ -99,7 +104,7 @@ public class AddInventoryItemView extends View {
      * create Title text
      */
     private Node createTitle() {
-		Text titleText = new Text("Inventory Item Info:");
+		Text titleText = new Text("Inventory Info");
 		titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 		titleText.setTextAlignment(TextAlignment.CENTER);
 		titleText.setFill(Color.DARKGREEN);
@@ -123,8 +128,11 @@ public class AddInventoryItemView extends View {
 
         //-----Barcode Label and Field-----
         Text barcodeLabel = new Text("Barcode: ");
+        Font myFont = Font.font("Arial", FontWeight.BOLD, 16);
+        barcodeLabel.setFont(myFont);
         barcodeLabel.setWrappingWidth(150);
         barcodeLabel.setTextAlignment(TextAlignment.RIGHT);
+        barcodeLabel.setFill(Color.BLACK);
         grid.add(barcodeLabel, 0, 0);
 
         barcodeField = new TextField();
@@ -133,8 +141,10 @@ public class AddInventoryItemView extends View {
 
         //-----Gender Label and Field-----
         Text genderLabel = new Text("Gender (M/W): ");
+        genderLabel.setFont(myFont);
         genderLabel.setWrappingWidth(150);
         genderLabel.setTextAlignment(TextAlignment.RIGHT);
+        genderLabel.setFill(Color.BLACK);
         grid.add(genderLabel, 0, 1);
         
         genderField = new TextField();
@@ -143,8 +153,10 @@ public class AddInventoryItemView extends View {
 
         //-----Article Label and Field-----
         Text articleLabel = new Text("Article Type (Barcode Prefix): ");
+        articleLabel.setFont(myFont);
         articleLabel.setWrappingWidth(150);
         articleLabel.setTextAlignment(TextAlignment.RIGHT);
+        articleLabel.setFill(Color.BLACK);
         grid.add(articleLabel, 0, 2);
 
         articleField = new TextField();
@@ -153,8 +165,10 @@ public class AddInventoryItemView extends View {
 
         //-----Primary Color Label and Field-----
         Text colorLabel = new Text("Primary Color (Barcode Prefix): ");
+        colorLabel.setFont(myFont);
         colorLabel.setWrappingWidth(150);
         colorLabel.setTextAlignment(TextAlignment.RIGHT);
+        colorLabel.setFill(Color.BLACK);
         grid.add(colorLabel, 0, 3);
 
         colorField = new TextField();
@@ -163,8 +177,10 @@ public class AddInventoryItemView extends View {
 
         //------Color2 Label and Field-----
         Text color2Label = new Text("Secondary Color (Barcode Prefix): ");
+        color2Label.setFont(myFont);
         color2Label.setWrappingWidth(150);
         color2Label.setTextAlignment(TextAlignment.RIGHT);
+        color2Label.setFill(Color.BLACK);
         grid.add(color2Label, 0, 4);
 
         color2Field = new TextField();
@@ -173,8 +189,10 @@ public class AddInventoryItemView extends View {
 
         //-----Size Label and Field----
         Text sizeLabel = new Text("Size: ");
+        sizeLabel.setFont(myFont);
         sizeLabel.setWrappingWidth(150);
         sizeLabel.setTextAlignment(TextAlignment.RIGHT);
+        sizeLabel.setFill(Color.BLACK);
         grid.add(sizeLabel, 0, 5);
 
         sizeField = new TextField();
@@ -183,8 +201,10 @@ public class AddInventoryItemView extends View {
 
         //-----Brand Name Label and Field-----
         Text brandLabel = new Text("Brand: ");
+        brandLabel.setFont(myFont);
         brandLabel.setWrappingWidth(150);
         brandLabel.setTextAlignment(TextAlignment.RIGHT);
+        brandLabel.setFill(Color.BLACK);
         grid.add(brandLabel, 0, 6);
 
         brandField = new TextField();
@@ -193,8 +213,10 @@ public class AddInventoryItemView extends View {
 
         //-----Notes Label and Field-----
         Text notesLabel = new Text("Notes: ");
+        notesLabel.setFont(myFont);
         notesLabel.setWrappingWidth(150);
         notesLabel.setTextAlignment(TextAlignment.RIGHT);
+        notesLabel.setFill(Color.BLACK);
         grid.add(notesLabel, 0, 7);
 
         notesField = new TextField();
@@ -203,8 +225,10 @@ public class AddInventoryItemView extends View {
 
         //-----Donor First Name Label and Field-----
         Text fnameLabel = new Text("Donor First name: ");
+        fnameLabel.setFont(myFont);
         fnameLabel.setWrappingWidth(150);
         fnameLabel.setTextAlignment(TextAlignment.RIGHT);
+        fnameLabel.setFill(Color.BLACK);
         grid.add(fnameLabel, 0, 8);
         
         fnameField = new TextField();
@@ -213,8 +237,10 @@ public class AddInventoryItemView extends View {
 
         //-----Donor Last Name Label and Field------
         Text lnameLabel = new Text("Donor Last Name: ");
+        lnameLabel.setFont(myFont);
         lnameLabel.setWrappingWidth(150);
         lnameLabel.setTextAlignment(TextAlignment.RIGHT);
+        lnameLabel.setFill(Color.BLACK);
         grid.add(lnameLabel, 0, 9);
         
         lnameField = new TextField();
@@ -223,8 +249,10 @@ public class AddInventoryItemView extends View {
 
         //-----Donor Phone Number Label and Field------
         Text phoneLabel = new Text("Phone Number: ");
+        phoneLabel.setFont(myFont);
         phoneLabel.setWrappingWidth(150);
         phoneLabel.setTextAlignment(TextAlignment.RIGHT);
+        phoneLabel.setFill(Color.BLACK);
         grid.add(phoneLabel, 0, 10);
 
         phoneField = new TextField();
@@ -233,8 +261,10 @@ public class AddInventoryItemView extends View {
 
         //-----Donor Email Label and Field-----
         Text emailLabel = new Text("Email: ");
+        emailLabel.setFont(myFont);
         emailLabel.setWrappingWidth(150);
         emailLabel.setTextAlignment(TextAlignment.RIGHT);
+        emailLabel.setFill(Color.BLACK);
         grid.add(emailLabel, 0, 11);
 
         emailField = new TextField();
