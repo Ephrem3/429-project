@@ -9,6 +9,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -50,9 +53,13 @@ public class AddColorView extends View
     {
         super(color, "AddColorView");
 
+        String css = getClass().getResource("Styles.css").toExternalForm();
+        getStylesheets().add(css);
+
         // create a container for showing the contents
         VBox container = new VBox(10);
         container.setPadding(new Insets(15, 5, 5, 5));
+        container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 
         // Add a title for this panel
         container.getChildren().add(createTitle());
@@ -97,13 +104,15 @@ public class AddColorView extends View
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         Text prompt = new Text("COLOR INFORMATION");
+        prompt.setFont(Font.font("Arial", FontWeight.BOLD, 18));
         prompt.setWrappingWidth(400);
         prompt.setTextAlignment(TextAlignment.CENTER);
-        prompt.setFill(Color.BLACK);
+        prompt.setFill(Color.DARKGREEN);
         grid.add(prompt, 0, 0, 2, 1);
 
         Text descriptionLabel = new Text("Description: ");
-        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        Font myFont = Font.font("Arial", FontWeight.BOLD, 16);
+        descriptionLabel.setFill(Color.BLACK);
         descriptionLabel.setFont(myFont);
         descriptionLabel.setWrappingWidth(150);
         descriptionLabel.setTextAlignment(TextAlignment.RIGHT);
@@ -115,6 +124,7 @@ public class AddColorView extends View
 
         Text barcodeLabel = new Text("Barcode Prefix: ");
         barcodeLabel.setFont(myFont);
+        barcodeLabel.setFill(Color.BLACK);
         barcodeLabel.setWrappingWidth(150);
         barcodeLabel.setTextAlignment(TextAlignment.RIGHT);
         grid.add(barcodeLabel, 0, 2);
@@ -127,6 +137,7 @@ public class AddColorView extends View
 
         Text alpha_codeLabel = new Text("Alpha Code: ");
         alpha_codeLabel.setFont(myFont);
+        alpha_codeLabel.setFill(Color.BLACK);
         alpha_codeLabel.setWrappingWidth(150);
         alpha_codeLabel.setTextAlignment(TextAlignment.RIGHT);
         grid.add(alpha_codeLabel, 0, 3);
