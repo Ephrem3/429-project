@@ -65,7 +65,7 @@ public class DeleteColorView extends View {
 		// create a container for showing the contents
 		VBox container = new VBox(10);
 		container.setPadding(new Insets(15, 5, 5, 5));
-		container.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
+		container.setBackground(new Background(new BackgroundFill(javafx.scene.paint.Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 
 		// create our GUI components, add them to this panel
 		container.getChildren().add(createTitle());
